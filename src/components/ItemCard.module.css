@@ -1,0 +1,52 @@
+.bananaCard {
+    width: min(250px, 20vw);
+    height: min(250px, 20vw);
+    border: 5px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+    padding: 20px;
+}
+
+.bananaCard:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cardImage {
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    max-width: min(200px, 19vw);
+    max-height: min(200px, 19vw);
+}
+
+.cardText {
+    grid-row: 2;
+    justify-self: center;
+    align-self: end;
+}
+
+@media screen and (max-width: 1150px) {
+    .bananaCard {
+        width: 80vw;
+        height: 100px;
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: 1fr !important;
+    }
+
+    .cardImage {
+        justify-self: start !important;
+        max-height: 100px;
+        max-width: 100px;
+        grid-row: 1;
+        grid-column: 1;
+        align-self: center !important;
+    }
+
+    .cardText {
+        grid-row: 1 !important;
+        grid-column: 2;
+        align-self: center;
+    }
+}
