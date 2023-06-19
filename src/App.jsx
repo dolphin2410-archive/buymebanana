@@ -11,6 +11,16 @@ function wheelSelect(e) {
   }
 }
 
+function handleItem(itemName) {
+  let isConfirmed = window.confirm("계속하시겠습니까?")
+  if (isConfirmed) {
+    setTimeout(()=>{
+      alert("이용해주셔서 감사합니다")
+    }, 1000)
+    
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -22,13 +32,13 @@ function App() {
       <section className="select" onWheel={wheelSelect}>
         <h1 className='title'>종류를 선택하세요</h1>
         <div className='type-container'>
-          <ItemCard image={bananaMilk}>
+          <ItemCard image={bananaMilk} onClick={() => handleItem("bananaMilk")}>
             바나나 우유
           </ItemCard>
-          <ItemCard image={banana}>
+          <ItemCard image={banana} onClick={() => handleItem("banana")}>
             신선한 바나나
           </ItemCard>
-          <ItemCard image={bananaSmoothie}>
+          <ItemCard image={bananaSmoothie} onClick={() => handleItem("bananaSmoothie")}>
             망고 바나나 스무디
           </ItemCard>
         </div>
